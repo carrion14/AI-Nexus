@@ -1,134 +1,101 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Nexus | Herramientas y Ecosistema de Inteligencia Artificial</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Directorio definitivo de herramientas de Inteligencia Artificial. Encuentra IAs para generación de texto, video, código e imágenes. Asistente inteligente incluido.">
-    <meta name="keywords"
-        content="IA, Inteligencia Artificial, ChatGPT, Midjourney, Herramientas SEO, Productividad, Directorio AI">
-    <meta name="author" content="AI Nexus Architecture">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="AI Nexus - Tu Hub de Herramientas IA">
-    <meta property="og:description"
-        content="Explora, filtra y descubre las mejores IAs para optimizar tu flujo de trabajo.">
-
-    <!-- Performance Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>SOF.AI | Source Of Future</title>
+    <meta name="description" content="Discover the best AI tools for creativity and business.">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon Placeholder (SVG) -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 
-<body>
+<body id="homePage">
 
-    <!-- Header / Navigation -->
-    <header class="main-header">
-        <div class="logo-container">
-            <div class="ai-logo">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#4285F4" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M2 17L12 22L22 17" stroke="#34A853" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M2 12L12 17L22 12" stroke="#EA4335" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="nav-content">
+            <a href="index.html" class="brand">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">SOF.AI</span>
+            </a>
+            <div class="nav-actions">
+                <div class="nav-links">
+                    <a href="ai-tools.html">AI Tools</a>
+                    <a href="ai-business.html">AI Business</a>
+                </div>
             </div>
-            <h1>AI Nexus</h1>
-        </div>
-
-        <div class="search-bar">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="globalSearch" placeholder="Buscar herramienta (ej. Claude, Video)..."
-                aria-label="Buscar IA">
-        </div>
-    </header>
-
-    <!-- Category Chips Navigation -->
-    <nav class="category-nav" aria-label="Categorías de herramientas">
-        <div class="chips-container" id="categoryContainer">
-            <!-- Chips injected by JS -->
-            <button class="chip active" data-category="all">Todo</button>
         </div>
     </nav>
 
-    <!-- Main Content Grid -->
-    <main class="container">
-        <section id="toolsGrid" class="tools-grid">
-            <!-- Cards injected by JS -->
-            <div class="loader">Cargando ecosistema...</div>
+    <!-- Hero Header -->
+    <header class="hero-header">
+        <div class="hero-content">
+            <h1>Source Of Future</h1>
+            <p>The definitive architecture for Artificial Intelligence discovery.</p>
+            <div class="hero-search">
+                <input type="text" id="globalSearch" placeholder="Search the future (e.g. Video, Coding)...">
+                <button aria-label="Search">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container home-layout">
+        <!-- Sidebar Categories -->
+        <aside class="sidebar-categories">
+            <h3>Explore</h3>
+            <div class="category-list" id="popularCategoriesList">
+                <!-- Injected by JS -->
+            </div>
+        </aside>
+
+        <!-- Trending Section -->
+        <section class="trending-section">
+            <div class="section-header">
+                <h3>Trending AIs</h3>
+                <a href="ai-tools.html" class="view-all">View All Tools ➔</a>
+            </div>
+            <div class="tools-grid" id="trendingGrid">
+                <div class="loader">Loading intelligence...</div>
+            </div>
         </section>
     </main>
 
-    <!-- AI Assistant Floating Action Button & Modal -->
-    <div class="ai-assistant-wrapper">
-        <button id="chatToggle" class="chat-fab" aria-label="Abrir Asistente IA">
-            <span class="sparkle-icon">✨</span>
-            <span class="fab-text">Asistente IA</span>
-        </button>
+    <!-- Modal -->
+    <div id="toolModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">×</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
 
-        <section id="chatInterface" class="chat-interface hidden" aria-hidden="true">
+    <!-- Sofia Assistant -->
+    <div class="ai-assistant-wrapper">
+        <button id="chatToggle" class="chat-fab">
+            <span class="sparkle-icon">✨</span>
+            <span class="fab-text">Ask Sofia</span>
+        </button>
+        <section id="chatInterface" class="chat-interface hidden">
             <header class="chat-header">
-                <div class="chat-title">
-                    <span>🤖</span>
-                    <h3>Nexus Guide</h3>
-                </div>
-                <button id="closeChat" class="close-btn" aria-label="Cerrar chat">×</button>
+                <h3 style="color:white; margin:0;">Sofia AI Assistant</h3>
+                <button id="closeChat"
+                    style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">×</button>
             </header>
             <div class="chat-messages" id="chatMessages">
                 <div class="message bot">
-                    <p>Hola. Soy tu arquitecto de soluciones IA. ¿Qué necesitas hacer hoy? (Ej: "Crear imágenes",
-                        "Editar video", "Programar código")</p>
+                    <p>Welcome to SOF.AI. I am ready to assist.</p>
                 </div>
             </div>
             <form id="chatForm" class="chat-input-area">
-                <input type="text" id="userQuery" placeholder="Escribe tu necesidad..." autocomplete="off">
-                <button type="submit" class="send-btn" aria-label="Enviar">➤</button>
+                <input type="text" id="userQuery" placeholder="Ask about tools..." autocomplete="off">
+                <button type="submit" class="send-btn">➤</button>
             </form>
         </section>
     </div>
 
     <footer class="main-footer">
-        <p>© 2026 AI Nexus Architecture. Optimizado para procesos de alto rendimiento.</p>
-
-        <!-- Sección de Créditos del Arquitecto -->
-        <div class="architect-credits">
-            <p>Desarrollado por <strong>Rubén Carrión</strong></p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/rubencarriontorres/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/rubencarriont/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <nav class="footer-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos</a>
-            <a href="#">Sobre la Base de Datos</a>
-        </nav>
+        <p>© 2026 SOF.AI. Architected by <strong>Rubén Carrión</strong>.</p>
     </footer>
 
     <script src="script.js"></script>

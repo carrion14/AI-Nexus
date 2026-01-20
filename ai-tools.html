@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Tools | SOF.AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="toolsPage">
+
+    <nav class="top-nav">
+        <div class="nav-content">
+            <a href="index.html" class="brand">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">SOF.AI</span>
+            </a>
+            <div class="nav-actions">
+                <div class="nav-links">
+                    <a href="ai-tools.html" class="active">AI Tools</a>
+                    <a href="ai-business.html">AI Business</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="layout-container">
+            <h2>Creative & Generative AI</h2>
+            <p>Tools for image, video, text, and music generation.</p>
+
+            <div class="filter-bar">
+                <select id="subCatSelect">
+                    <option value="all">All Categories</option>
+                </select>
+                <select id="priceSelect">
+                    <option value="all">Any Price</option>
+                    <option value="free">Free</option>
+                    <option value="paid">Paid</option>
+                </select>
+                <input type="text" id="pageSearch" placeholder="Filter list...">
+            </div>
+        </div>
+    </header>
+
+    <main class="layout-container">
+        <section class="tools-grid" id="mainGrid">
+            <div class="loader">Loading tools...</div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="toolModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">×</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
